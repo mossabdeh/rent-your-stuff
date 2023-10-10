@@ -7,7 +7,7 @@ terraform {
     }
 
     herokux = {
-      source = " davidji99/herokux"
+      source = "davidji99/herokux"
       version = "~> 1.0.0"
     }
   }
