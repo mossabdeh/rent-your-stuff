@@ -7,6 +7,6 @@ resource "heroku_app" "rent-your-stuff-staging" {
   }
 
   buildpacks = [
-    "heroku/go"
+    "heroku/gradle"
   ]
 }
