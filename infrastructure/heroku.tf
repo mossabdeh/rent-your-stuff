@@ -1,5 +1,5 @@
-resource "heroku_app" "rent-your-stuff-staging" {
-  name   = "rent-your-stuff-staging"
+resource "heroku_app" "rent-your-stuff-emerald" {
+  name   = "rent-your-stuff-emerald"
   region = "eu"
 
   config_vars = {
