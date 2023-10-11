@@ -26,7 +26,7 @@ resource "heroku_pipeline" "rent-your-stuff-pipeline" {
 resource "heroku_pipeline_coupling" "staging_pipeline_coupling" {
   app_id   = heroku_app.rent-your-stuff-emerald.id
   pipeline = heroku_pipeline.rent-your-stuff-pipeline.id
-  stage    = "Staging"
+  stage    = "staging"
 }
 
 // Add the GitHub repository integration with the pipeline.
