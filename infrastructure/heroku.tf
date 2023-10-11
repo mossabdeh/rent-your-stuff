@@ -14,7 +14,7 @@ resource "heroku_app" "rent-your-stuff-emerald" {
 # Create a database, and configure the app to use it
 resource "heroku_addon" "rent-your-stuff-emerald_db" {
   app_id = heroku_app.rent-your-stuff-emerald.id
-  plan   = "heroku-postgresql:hobby-dev"
+  plan   = "heroku-postgresql:mini"
 }
 
 # Create a Pipeline
