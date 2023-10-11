@@ -43,7 +43,8 @@ resource "herokux_app_github_integration" "foobar" {
   wait_for_ci = true
 
   # Tells Terraform that this resource must be created/updated
-  # only after the `herokux_pipeline_github_integration` has been successfully applied.
+  # only after the `herokux_pipeline_github_integration` has been successfully applied .
   depends_on = [herokux_pipeline_github_integration.foobar]
+  # i authorize my github account to heroku
 }
 
