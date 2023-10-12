@@ -47,5 +47,6 @@ resource "herokux_app_github_integration" "foobar" {
   depends_on = [herokux_pipeline_github_integration.foobar]
   # i authorize my github account to heroku
   # i set java version to 17 in gradle build to solve heroku log problem
+  # i remove that for know
 }
 
