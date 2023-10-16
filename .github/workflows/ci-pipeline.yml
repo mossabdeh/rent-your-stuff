@@ -58,5 +58,5 @@ jobs:
         uses: mikepenz/action-junit-report@v2
         if : always() # always run even if the previous step fails
         with:
-          report_path: '**/build/test-results/test/Test-*.xml'
+          report_paths: '**/build/test-results/test/Test-*.xml'
 
