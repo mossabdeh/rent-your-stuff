@@ -51,8 +51,7 @@ jobs:
           MAIN_DATASOURCE_PASSWORD: db_password
         run: ./gradlew test
 
-      - name: Build JAR
-        run: ./gradlew -Pvaadin.productionMode=true bootJar  # Use bootJar task to build a JAR
+
 
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v2

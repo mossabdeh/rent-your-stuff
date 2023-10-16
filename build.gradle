@@ -49,4 +49,7 @@ test {
     useJUnitPlatform()
 }
 
+vaadin {
+    productionMode = true
+}
 // Set Java version to 17
