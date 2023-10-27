@@ -3,13 +3,13 @@ package dev.deh.rys.entity;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotBlank;
 
 @JmixEntity(name = "rys_Address")
 @Embeddable
 public class Address {
+    @NotBlank
     @Column(name = "STREET", nullable = false)
-    @NotNull
     private String street;
 
     @Column(name = "POST_CODE")
