@@ -67,7 +67,7 @@ class CustomerValidationTest {
         ValidationVerification.ValidationResult emailViolation = validationVerification.validateSkipFirst(customer).get(0);
 
        // Now, emailViolation contains information about the second violation.
-
+       // test
 
         // and
         assertThat(emailViolation.getAttribute())
