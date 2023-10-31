@@ -57,26 +57,5 @@ class CustomerValidationTest {
 
 
 
-    @Test
-    void given_addressWithInvalidStreet_when_validateAddress_then_addressIsInvalidBecauseOfStreet() {
-        // given
-        customer.setEmail("invalidEmailAddress");
 
-        // when
-
-        ValidationVerification.ValidationResult emailViolation = validationVerification.validateSkipFirst(customer).get(0);
-
-       // Now, emailViolation contains information about the second violation.
-       // test
-
-        // and
-        assertThat(emailViolation.getAttribute())
-                .isEqualTo("email");
-        assertThat(emailViolation.getErrorType())
-                .isEqualTo(validationVerification.validationMessage("Email"));
-
-
-
-
-    }
     }

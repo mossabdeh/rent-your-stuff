@@ -24,20 +24,6 @@ public class ValidationVerification {
 
 
     // I added this to Skip the First Violation
-    public <T> List<ValidationResult> validateSkipFirst(T address) {
-        List<ConstraintViolation<T>> violations = validator.validate(address, Default.class)
-                .stream()
-                .collect(Collectors.toList());
-
-        // Skip the first violation if it exists
-        if (!violations.isEmpty()) {
-            violations.remove(0);
-        }
-
-        return violations.stream()
-                .map(ValidationResult::new)
-                .collect(Collectors.toList());
-    }
 
 
     public String validationMessage(String errorType) {
@@ -66,5 +52,7 @@ public class ValidationVerification {
         public String getErrorType() {
             return violation.getMessageTemplate();
         }
+
+
     }
 }
