@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -24,11 +23,11 @@ class CustomerIntegrationTest {
 
     @Autowired
     SystemAuthenticator systemAuthenticator;
-
-    @Autowired
-    Validator validator;
-
     private Customer customer;
+    @Autowired
+
+    private Validator validator;
+
     @BeforeEach
     void setUp() {
          customer = dataManager.create(Customer.class);
@@ -60,10 +59,9 @@ class CustomerIntegrationTest {
                 .isNotNull();
 
     }
-
     @Test
     void given_customerWithInvalidEmail_when_validateCustomer_then_customerIsInvalid() {
-       // given
+        // given
         customer.setEmail("invalidEmailAddress");
 
         // when
@@ -74,7 +72,7 @@ class CustomerIntegrationTest {
                 .hasSize(2);// Expect 2 violations (lastName and email)
 
         // and
-                assertThat(firstViolation(violations).getPropertyPath().toString())
+        assertThat(firstViolation(violations).getPropertyPath().toString())
                 .isEqualTo("email");
         assertThat(firstViolation(violations).getMessageTemplate())
                 .isEqualTo("{jakarta.validation.constraints.Email.message}");
@@ -87,5 +85,8 @@ class CustomerIntegrationTest {
     private static ConstraintViolation<Customer> firstViolation(Set<ConstraintViolation<Customer>> violations) {
         return violations.stream().skip(1).findFirst().orElseThrow();
     } // We skip(1) to specifically target the email violation, excluding the lastName violation.
+
+
+
 
 }
